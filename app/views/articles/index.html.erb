@@ -1,0 +1,12 @@
+<% if @articles.blank? %>
+<p>
+  No articles yet
+</p>
+<% else %>
+<ul id = "articles">
+ <% @articles.each do |c| %>
+ <li><%= link_to c.title, {:action => 'show', :id => c.id} -%></li>
+ <% end %>
+</ul>
+
+<% end %>
