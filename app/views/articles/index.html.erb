@@ -5,7 +5,7 @@
 <% else %>
 <ul id = "articles">
  <% @articles.each do |c| %>
- <li><%= link_to c.title, {:action => 'show', :id => c.id} -%></li>
+ <li><%= link_to c.title, {:action => 'show', :id => c.id} %></li>
  <% end %>
 </ul>
 
