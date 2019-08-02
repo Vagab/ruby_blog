@@ -4,8 +4,8 @@
 </p>
 <% else %>
 <ul id = "articles">
- <% @articles.each do |c| %>
- <li><%= link_to c.title, {:action => 'show', :id => c.id} %></li>
+ <% @articles.each do |article| %>
+ <li><%= link_to article.title, {:action => 'show', :id => article.id} %></li>
  <% end %>
 </ul>
 
