@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+# gem slim
+
+gem 'slim-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
