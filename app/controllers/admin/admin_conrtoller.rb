@@ -1,6 +1,6 @@
 class AdminController < ActionController::Base
 
-  before_action :set_book
+  before_action :set_article
 
   def index
     @articles = Article.all
