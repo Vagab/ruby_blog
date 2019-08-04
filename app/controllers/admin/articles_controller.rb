@@ -1,43 +1,47 @@
 class Admin::ArticlesController < ApplicationController
 
-  before_action :set_article
+  #before_action :set_article
 
   def index
     @articles = Article.all
   end
 
   def show
-    #@article = Article.find(params[:id])
+    @article = Article.find(params[:id])
+  end
+
+  def new
+    @article = Article.new
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article = Article.new(article_params)
     if @article.save
-      redirect_to article_path, notice: "Article has been created"
+      redirect_to admin_articles_path, notice: "Article has been created"
     else
       render :new
     end
   end
 
   def edit
-    #@article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
-  def delete
-    #@article = Article.find(params[:id])
-    if @article.update_attributes(params[:article])
-      redirect_to article_path, notice: "Model successfully updated."
+  def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(article_params)
+      redirect_to admin_article_path, notice: "Article successfully updated."
     else
       render :edit
     end
   end
 
-  def update
-    #@article = Article.find(params[:id])
+  def destroy
+    @article = Article.find(params[:id])
     if @article.destroy
-      redirect_to article_path, notice: "Model successfully deleted."
+      redirect_to admin_articles_path, notice: "Article successfully deleted."
     else
-      redirect_to article_path, notice: "Not possible to destroy the Model."
+      redirect_to admin_article_path, notice: "Not possible to destroy the Article."
     end
   end
 

@@ -1,3 +1,10 @@
 = @article.title
 br/
 = @article.description
+br/
+= link_to 'Edit', {:action => 'edit'}
+br/
+= link_to 'Back', admin_articles_path
+br/
+= link_to 'Delete', admin_article_path(@article), method: :delete,
+                                                  data: {confirm: "Are you sure?"}

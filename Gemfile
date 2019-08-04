@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+# gem simple form
+
+gem 'simple_form'
+
 # gem slim
 
 gem 'slim-rails'
