@@ -1,4 +1,4 @@
-class AdminController < ActionController::Base
+class ArticlesController < ActionController::Base
 
   before_action :set_article
 
