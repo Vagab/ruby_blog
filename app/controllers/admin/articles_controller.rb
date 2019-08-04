@@ -1,4 +1,4 @@
-class ArticlesController < ActionController::Base
+class Admin::ArticlesController < ApplicationController
 
   before_action :set_article
 
@@ -43,8 +43,8 @@ class ArticlesController < ActionController::Base
 
   private
 
-  def set_book
-    #@article = Article.find(params[:id])
+  def set_article
+    @article = Article.find(params[:id])
   end
 
   def article_params
