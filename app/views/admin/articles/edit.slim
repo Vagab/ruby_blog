@@ -1,6 +1,5 @@
 h1 Edit Article Detail
 = simple_form_for [:admin, @article] do |f|
-  = f.input :title
-  = f.input :description
+  = render 'form', f: f
   = f.button :submit
 = link_to 'Back', admin_article_path(@article)

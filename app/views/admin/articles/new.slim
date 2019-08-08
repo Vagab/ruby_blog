@@ -1,5 +1,4 @@
 h1 Add New Article
 = simple_form_for [:admin, @article] do |f|
-  = f.input :title
-  = f.input :description
+  = render 'form', f: f
   = f.button :submit
