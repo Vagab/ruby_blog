@@ -1,6 +1,6 @@
 = @article.title
 br/
-= @article.description
+= markdown(@article.description)
 br/
 = link_to 'Edit', {:action => 'edit'}
 br/
