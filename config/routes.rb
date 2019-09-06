@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
   devise_for :users
   resources :articles, only: [:index, :show]
-  match '/admin', to: 'dashboard#index', via: :get
   namespace :admin do
+    match '/', to: 'dashboards#index', via: :get
     resources :articles
     resources :users
     resources :dashboards, only: [:index]
