@@ -29,14 +29,6 @@ class Admin::UsersController < AdminController
     redirect_to admin_users_path, notice: "user successfully deleted."
   end
 
-  def create_user
-    if @user.save
-      redirect_to admin_users_path, notice: "user has been created"
-    else
-      false
-    end
-  end
-
   def update_user
     if @user.update_attributes(user_params)
       redirect_to admin_user_path, notice: "user successfully updated."
@@ -45,19 +37,11 @@ class Admin::UsersController < AdminController
     end
   end
 
-  def build_user
-    @user = User.new(user_params)
-  end
-
   def load_users
     @users = User.all
   end
 
   def load_user
-    @user = User.find(params[:id])
-  end
-
-  def set_user
     @user = User.find(params[:id])
   end
 
