@@ -1,0 +1,12 @@
+= @user.email
+br/
+= @user.first_name
+br/
+= @user.last_name
+br/
+= link_to 'Edit', edit_admin_user_path(@user)
+br/
+= link_to 'Back', admin_users_path
+br/
+= link_to 'Delete', admin_user_path(@user), method: :delete,
+                                                  data: {confirm: "Are you sure?"}
