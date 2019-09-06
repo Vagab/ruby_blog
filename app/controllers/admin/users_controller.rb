@@ -8,15 +8,6 @@ class Admin::UsersController < AdminController
     load_user
   end
 
-  def new
-    build_user
-  end
-
-  def create
-    build_user
-    create_user or render :new
-  end
-
   def edit
     load_user
   end
