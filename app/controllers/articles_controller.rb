@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def load_articles
-    @articles = Article.all
+    @articles = Article.where(published: true)
   end
 
   def decorate_article
