@@ -48,9 +48,6 @@ class Admin::ArticlesController < AdminController
   end
 
   def update_article
-    load_article
-    # if @article.update_attributes(article_params)
-    #   redirect_to admin_article_path, notice: "Article successfully updated."
     result = UpdateArticle.new(attributes: article_params, article: @article).call
     if result.success?
       redirect_to admin_article_path(result.article)

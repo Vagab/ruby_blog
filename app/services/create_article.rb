@@ -1,11 +1,10 @@
 class CreateArticle
+  
   class Result < Struct.new(:success, :article)
     def success?
       success == true
     end
   end
-
-  attr_reader :attributes
 
   def initialize(attributes:)
     @attributes = attributes
@@ -18,5 +17,5 @@ class CreateArticle
   rescue ActiveRecord::RecordInvalid => e
     Result.new(false)
   end
-  
+
 end

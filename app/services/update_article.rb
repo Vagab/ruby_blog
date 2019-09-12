@@ -6,8 +6,6 @@ class UpdateArticle
     end
   end
 
-  attr_reader :attributes
-
   def initialize(attributes:, article:)
     @attributes = attributes
     @article = article
