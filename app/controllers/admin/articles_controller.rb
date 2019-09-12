@@ -79,11 +79,11 @@ class Admin::ArticlesController < AdminController
   end
 
   def decorate_article
-    @article = ArticleDecorator.decorate(@article)
+    @article = Admin::ArticleDecorator.decorate(@article)
   end
 
   def decorate_articles
-    @articles = ArticleDecorator.decorate_collection(@articles)
+    @articles = Admin::ArticleDecorator.decorate_collection(@articles)
   end
 
 end
