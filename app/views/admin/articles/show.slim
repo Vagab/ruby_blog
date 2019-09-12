@@ -1,4 +1,5 @@
 = @article.title
+= @article.status
 br/
 = markdown(@article.description)
 br/
@@ -8,5 +9,3 @@ br/
 br/
 = link_to 'Delete', admin_article_path(@article), method: :delete,
                                                   data: {confirm: "Are you sure?"}
-br/
-= @article.published
