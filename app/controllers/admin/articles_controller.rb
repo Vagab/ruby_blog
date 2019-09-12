@@ -2,10 +2,12 @@ class Admin::ArticlesController < AdminController
 
   def index
     load_articles
+    decorate_articles
   end
 
   def show
     load_article
+    decorate_article
   end
 
   def new
@@ -74,6 +76,14 @@ class Admin::ArticlesController < AdminController
     params.require(:article)
       .permit(:title, :description, :published)
       .merge(user: current_user)
+  end
+
+  def decorate_article
+    @article = ArticleDecorator.decorate(@article)
+  end
+
+  def decorate_articles
+    @articles = ArticleDecorator.decorate_collection(@articles)
   end
 
 end
