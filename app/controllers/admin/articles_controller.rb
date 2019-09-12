@@ -72,7 +72,7 @@ class Admin::ArticlesController < AdminController
     return {} unless params[:article]
 
     params.require(:article)
-      .permit(:title, :description)
+      .permit(:title, :description, :published)
       .merge(user: current_user)
   end
 
