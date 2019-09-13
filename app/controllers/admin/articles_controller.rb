@@ -2,10 +2,12 @@ class Admin::ArticlesController < AdminController
 
   def index
     load_articles
+    decorate_articles
   end
 
   def show
     load_article
+    decorate_article
   end
 
   def new
@@ -39,16 +41,18 @@ class Admin::ArticlesController < AdminController
   end
 
   def create_article
-    if @article.save
-      redirect_to admin_articles_path, notice: "Article has been created"
+    result = CreateArticle.new(attributes: article_params).call
+    if result.success?
+      redirect_to admin_article_path(result.article)
     else
       false
     end
   end
 
   def update_article
-    if @article.update_attributes(article_params)
-      redirect_to admin_article_path, notice: "Article successfully updated."
+    result = UpdateArticle.new(attributes: article_params, article: @article).call
+    if result.success?
+      redirect_to admin_article_path(result.article)
     else
       false
     end
@@ -66,16 +70,20 @@ class Admin::ArticlesController < AdminController
     @article = Article.find(params[:id])
   end
 
-  def set_article
-    @article = Article.find(params[:id])
-  end
-
   def article_params
     return {} unless params[:article]
 
     params.require(:article)
-      .permit(:title, :description)
+      .permit(:title, :description, :published)
       .merge(user: current_user)
+  end
+
+  def decorate_article
+    @article = Admin::ArticleDecorator.decorate(@article)
+  end
+
+  def decorate_articles
+    @articles = Admin::ArticleDecorator.decorate_collection(@articles)
   end
 
 end
