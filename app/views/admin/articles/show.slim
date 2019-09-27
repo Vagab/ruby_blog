@@ -1,6 +1,8 @@
 = @article.title
 = @article.status
 br/
+= @article.tags.pluck(:name).join(', ')
+br/
 = markdown(@article.description)
 br/
 = link_to 'Edit', edit_admin_article_path(@article)
