@@ -2,7 +2,6 @@ class Admin::ArticlesController < AdminController
 
   def index
     load_articles
-    # decorate_articles
   end
 
   def show
@@ -80,10 +79,6 @@ class Admin::ArticlesController < AdminController
 
   def decorate_article
     @article = Admin::ArticleDecorator.decorate(@article)
-  end
-
-  def decorate_articles
-    @articles = Admin::ArticleDecorator.decorate_collection(@articles)
   end
 
 end
