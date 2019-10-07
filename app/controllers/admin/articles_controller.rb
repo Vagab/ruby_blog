@@ -63,7 +63,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def load_articles
-    @articles = Article.all
+    @articles = Article.all.page(params[:page])
   end
 
   def load_article
