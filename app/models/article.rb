@@ -10,4 +10,12 @@ class Article < ApplicationRecord
     self.tags.pluck(:name)*','
   end
 
+  def self.search(term)
+    if term
+      where('title LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
+
 end

@@ -45,6 +45,8 @@ gem 'slim-rails'
 
 gem 'kaminari'
 
+gem 'will_paginate'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

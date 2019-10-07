@@ -62,7 +62,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def load_articles
-    @articles = Article.all.page(params[:page])
+    @articles = Article.search(params[:search]).page(params[:page]).order('id DESC')
   end
 
   def load_article
@@ -73,7 +73,7 @@ class Admin::ArticlesController < AdminController
     return {} unless params[:article]
 
     params.require(:article)
-      .permit(:title, :description, :published, :comma_separated_tags)
+      .permit(:title, :description, :published, :comma_separated_tags, :search)
       .merge(user: current_user)
   end
 
