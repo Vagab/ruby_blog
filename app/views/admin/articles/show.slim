@@ -1,7 +1,7 @@
 = @article.title
 = @article.status
 br/
-= @article.tags.pluck(:name).join(', ')
+= @article.comma_separated_tags
 br/
 = markdown(@article.description)
 br/
