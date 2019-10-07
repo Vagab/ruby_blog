@@ -1,0 +1,2 @@
+class UsefulLink < ApplicationRecord
+end
