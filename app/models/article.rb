@@ -5,8 +5,8 @@ class Article < ApplicationRecord
   attribute :comma_separated_tags, :string
   validates :title, :description, presence: true
 
-  # def comma_separated_tags
-  #   self.tags.pluck(:name)*','
-  # end
+  def comma_separated_tags
+    self.tags.pluck(:name)*','
+  end
 
 end
