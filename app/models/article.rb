@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  paginates_per 5
+  paginates_per 1
   belongs_to :user
   has_and_belongs_to_many :tags
 

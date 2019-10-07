@@ -2,7 +2,7 @@ class Admin::ArticlesController < AdminController
 
   def index
     load_articles
-    decorate_articles
+    # decorate_articles
   end
 
   def show
