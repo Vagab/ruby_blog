@@ -1,0 +1,9 @@
+- if @useful_links.blank?
+  p
+    | No useful_links yet
+- else
+  ul#useful_links
+    - @useful_links.each do |useful_link|
+      li= link_to useful_link.url, admin_useful_link_path(useful_link)
+= link_to 'New', new_admin_useful_link_path(@useful_links)
+= paginate @useful_links

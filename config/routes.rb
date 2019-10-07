@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :users
     resources :dashboards, only: [:index]
+    resources :useful_links
   end
   root :to => 'articles#index'
 end

@@ -1,9 +1,0 @@
-- if @articles.blank?
-  p
-    | No articles yet
-- else
-  ul#articles
-    - @articles.each do |article|
-      li= link_to article.title, admin_article_path(article)
-= link_to 'New', new_admin_article_path(@articles)
-= paginate @articles
