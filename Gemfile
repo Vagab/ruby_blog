@@ -43,6 +43,8 @@ gem 'simple_form'
 
 gem 'slim-rails'
 
+gem 'kaminari'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
