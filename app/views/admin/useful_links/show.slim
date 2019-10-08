@@ -1,0 +1,10 @@
+= @useful_link.url
+br/
+= @useful_link.description
+br/
+= link_to 'Edit', edit_admin_useful_link_path(@useful_link)
+br/
+= link_to 'Back', admin_useful_links_path
+br/
+= link_to 'Delete', admin_useful_link_path(@useful_link), method: :delete,
+                                                  data: {confirm: "Are you sure?"}
