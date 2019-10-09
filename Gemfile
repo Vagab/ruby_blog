@@ -43,6 +43,8 @@ gem 'simple_form'
 
 gem 'slim-rails'
 
+gem 'friendly_id'
+
 gem 'kaminari'
 
 # Use ActiveStorage variant
