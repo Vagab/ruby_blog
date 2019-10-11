@@ -32,6 +32,8 @@ gem 'draper'
 
 gem 'devise'
 
+gem 'ransack'
+
 # gem simple form
 
 gem 'redcarpet', '~> 3.4'
