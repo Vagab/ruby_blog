@@ -27,10 +27,15 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry'
+gem 'pry-byebug'
+
 gem 'draper'
 # gem devise
 
 gem 'devise'
+
+gem 'ransack'
 
 # gem simple form
 
