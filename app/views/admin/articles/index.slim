@@ -1,6 +1,8 @@
 = search_form_for @q do |f|
-  = f.label :title_cont
-  = f.search_field :title_cont
+  - f.label :title
+  - f.search_field :title_cont
+  - f.submit class: 'btn btn-primary'
+
 
 - if @articles.blank?
   p
