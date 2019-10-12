@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
 
   def index
     load_articles
-    decorate_articles
   end
 
   def show
@@ -18,16 +17,11 @@ class ArticlesController < ApplicationController
 
   def load_articles
     @q = Article.ransack(params[:q])
-    # binding.pry
     @articles = @q.result.page(params[:page])
   end
 
   def decorate_article
     @article = ArticleDecorator.decorate(@article)
-  end
-
-  def decorate_articles
-    @articles = ArticleDecorator.decorate_collection(@articles)
   end
 
 end
