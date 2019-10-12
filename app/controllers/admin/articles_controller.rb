@@ -62,9 +62,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def load_articles
-    # @articles = Article.all.page(params[:page])
     @q = Article.ransack(params[:q])
-    # binding.pry
     @articles = @q.result.page(params[:page])
   end
 
