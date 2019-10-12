@@ -1,7 +1,6 @@
-= search_form_for @q do |f|
+= search_form_for @q, url: admin_articles_path do |f|
   - f.label :title
   - f.search_field :title_cont
-  - f.submit class: 'btn btn-primary'
 
 
 - if @articles.blank?
