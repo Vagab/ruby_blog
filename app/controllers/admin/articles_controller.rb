@@ -40,6 +40,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def create_article
+    return false unless @article.valid?
     result = CreateArticle.new(attributes: article_params).call
     if result.success?
       redirect_to admin_article_path(result.article)
