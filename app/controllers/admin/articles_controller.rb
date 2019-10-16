@@ -59,6 +59,7 @@ class Admin::ArticlesController < AdminController
 
   def build_article
     # @article = Article.new(article_params)
+    @article = ArticleFormModel.new(article_params)
   end
 
   def load_articles
