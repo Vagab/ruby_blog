@@ -58,7 +58,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def build_article
-    @article = Article.new(article_params)
+    # @article = Article.new(article_params)
   end
 
   def load_articles
@@ -75,7 +75,7 @@ class Admin::ArticlesController < AdminController
 
     params.require(:article)
       .permit(:title, :description, :published, :comma_separated_tags)
-      .merge(user: current_user)
+      # .merge(user: current_user)
   end
 
   def decorate_article
