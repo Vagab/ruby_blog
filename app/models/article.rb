@@ -10,7 +10,7 @@ class Article < ApplicationRecord
   validates :title, :description, presence: true
 
   def comma_separated_tags
-    self.tags.pluck(:name)*','
+    self.tags.pluck(:name).join ', '
   end
 
 end

@@ -10,11 +10,13 @@ class CreateArticle
     @attributes = attributes
   end
 
-  def call
-    # TODO: to method
+  def add_slug()
     @attributes[:slug] = @attributes[:title].parameterize
       .concat("-#{Time.now.strftime('%d-%m-%Y')}")
+  end
 
+  def call
+    add_slug()
     article = Article.new(@attributes)
     article.save!
     Result.new(true, article)

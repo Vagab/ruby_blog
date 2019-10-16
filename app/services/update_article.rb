@@ -11,15 +11,17 @@ class UpdateArticle
     @article = article
   end
 
-  def call
-    # TODO: to method
+  def add_tags()
     tags = @attributes[:comma_separated_tags].downcase.split(',')
     tags.each do |t|
       Tag.find_or_create_by(name: t)
     end
     article_tags = Tag.where(name: tags)
     @attributes[:tags] = article_tags
+  end
 
+  def call
+    add_tags()
     @article.attributes = @attributes
     @article.save!
     Result.new(true, @article)
