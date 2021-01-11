@@ -39,7 +39,7 @@ gem 'ransack'
 
 # gem simple form
 
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
 gem 'rouge', '~> 3.3'
 
 gem 'simple_form'
